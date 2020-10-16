@@ -36,8 +36,8 @@ variable vpc_name {
 }
 
 
-variable subnet_names {
-    description = "List of subnet names"
+variable subnet_ids {
+    description = "List of subnet ids"
     type        = list
     default     = []
 }
