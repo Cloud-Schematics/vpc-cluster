@@ -55,7 +55,7 @@ module worker_pools {
 ##############################################################################
 
 resource ibm_container_vpc_alb alb {
-  count  = var.enable_private_albs || var.enable_public_albs ? (2 * length(var.subnet_names)) : 0
+  count  = var.enable_private_albs || var.enable_public_albs ? (2 * length(var.subnet_ids)) : 0
   alb_id = element(ibm_container_vpc_cluster.cluster.albs.*.id, count.index)
   enable = (
     (
